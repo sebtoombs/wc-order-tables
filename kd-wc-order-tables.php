@@ -609,8 +609,14 @@ if(!class_exists('KD_WC_Order_Tables')) {
 
             $origin = $this->encodeURIPart('18 Essex St, Footscray VIC 3011');
 
+            $api_key = get_field('google_maps_api_key', 'options');
+            if(!$api_key || empty($api_key)) {
+                wp_send_json_error(['message'=>'API Key missing', 'code'=>'api_key']);
+                exit;
+            }
+
             $params = array(
-                'key'=>'AIzaSyDuYcGxtaULk8-sA900yTn8uKaCRFVInrA',
+                'key'=>$api_key,
                 'origin'=>$origin,
                 'destination'=>$this->encodeURIPart('Hobart, TAS 7000, Australia')
             );
@@ -758,3 +764,11 @@ if(!class_exists('KD_WC_Order_Tables')) {
     }
 }
 new KD_WC_OrderTables();
+
+
+
+
+require_once( 'class-github-plugin-updater.php' );
+if ( is_admin() ) {
+    new KD_Github_Plugin_Updater( __FILE__, 'sebtoombs', "wc-order-tables" );
+}

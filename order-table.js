@@ -432,11 +432,15 @@ if (typeof Object.assign !== 'function') {
 
                     //console.log('sending', data)
 
+                    _this.isLoading = true
+
                     ajaxPromise({
                         method: 'post',
                         url:window.order_table_data.admin_ajax,
                         data: data
                     }).then(function(resp) {
+
+                        _this.isLoading = false
 
                         //console.log(resp)
 
@@ -504,6 +508,8 @@ if (typeof Object.assign !== 'function') {
                         return;
 
                     }).catch(function(err) {
+
+                        _this.isLoading = false
 
                         console.error(err)
                         showDialog({

@@ -37,6 +37,11 @@
             </tr>
             </tbody>
         </table>
+        <div class="table-loader" v-bind:class="{'loading':isLoading, 'padded': orders.length>5}">
+            <div class="table-loader--inner">
+                <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+            </div>
+        </div>
     </div>
 
 
@@ -95,5 +100,10 @@
             </tr>
             </tbody>
         </table>
+        <div class="table-loader" v-bind:class="{'loading':isLoading, 'padded': orders.length>5}">
+            <div class="table-loader--inner">
+                <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+            </div>
+        </div>
     </div>
 </div>
