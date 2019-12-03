@@ -1,0 +1,33 @@
+#adminmenumain, #wpadminbar, #wpfooter, .order-table-print {
+  display: none !important;
+}
+#wpcontent, #wpfooter {
+  margin-left: 0 !important;;
+}
+.notice, .notice-error, .notice-warning {
+  display: none !important;
+}
+html.wp-toolbar {
+  padding-top: 0;
+}
+body {
+  background: #fff !important;
+}
+.nav-tab-wrapper {
+  display: none !important;
+}
+
+@media print {
+  /*@page { size: landscape; }*/
+  .table-wrapper.filter-wrapper {
+    display: none !important;
+  }
+  .page-title {
+    display: none !important;;
+  }
+
+  .table-wrapper table thead th.table-delivery-driver,
+  .table-wrapper table tbody td.table-delivery-driver {
+    display: none !important;
+  }
+}

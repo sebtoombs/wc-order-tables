@@ -1,0 +1,19 @@
+{
+  "name": "order-table",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "sass": "node-sass ./src/order-table.scss ./order-table.css",
+    "sass:prod": "node-sass --output-style compressed ./src/order-table.scss ./order-table.css"
+  },
+  "devDependencies": {
+    "del": "^5.1.0",
+    "event-stream": "^4.0.1",
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.0.2",
+    "gulp-zip": "^5.0.1",
+    "node-sass": "^4.13.0",
+    "sass": "^1.23.2"
+  }
+}

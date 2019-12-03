@@ -1,0 +1,214 @@
+.c-day-popover {
+  .popover-origin {
+    display: none;
+  }
+}
+.popover-container {
+  display: inline-block;
+}
+.popover-origin {
+  z-index: 10000;
+}
+
+$grey1: #c6d2d9;
+$grey2: #eff5f9;
+$grey3: #bcc8d0;
+$hover: #fefed8;
+
+@import "_lds-ring.scss";
+
+.order-table-print {
+  text-align:right;
+  padding: 1rem;
+}
+
+.order-tables-admin {
+  .nav-tab-wrapper {
+    margin-bottom: 0.75rem;
+  }
+}
+
+.order-table-back {
+  margin-bottom: 0.5rem;
+}
+
+.table-wrapper {
+  background: #fff;
+  border: 1px solid $grey1;
+  border-bottom: 4px solid $grey1;
+  border-radius: 0.25rem;
+  margin-bottom: 3rem;
+  position: relative;
+
+
+  .table-loader {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 10;
+
+    display: none;
+
+    &.loading {
+      display: block;
+    }
+
+    .table-loader--inner {
+      text-align: center;
+    }
+
+    &.padded {
+      .table-loader--inner {
+        padding: 5rem;
+      }
+    }
+  }
+
+  &.filter-wrapper {
+    margin-bottom: 0.5rem;
+  }
+
+  > table {
+    width: 100%;
+    border-collapse: collapse;
+
+    > thead > tr > th, tbody > tr > td {
+      padding: 0.5rem 0.25rem;
+      body.wp-admin & {
+        padding: 5px 2px;
+      }
+    }
+
+    > thead > tr > th {
+      font-weight: bold;
+      background-color: #e4eaee;
+      border-bottom: 1px solid $grey1;
+      vertical-align: middle;
+      text-align: center;
+      line-height: 1.5;
+      font-size: 1.25rem;
+      body.wp-admin & {
+        font-size: 12px;
+      }
+    }
+
+    > tbody {
+      font-weight: 400;
+      font-size: 1rem;
+      font-family: Roboto,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+      line-height: 1.5;
+      body.wp-admin & {
+        font-size: 12px;
+      }
+    }
+
+    > tbody > tr {
+      border-bottom: 1px solid #d2d2d2;
+      > td {
+        border-right: 1px solid #d2d2d2;
+      }
+      &:nth-child(even) {
+        background: $grey2;
+      }
+      &.status-urgent {
+        background: #FFBAFF; //#FBD38D;
+      }
+      &.status-ready {
+        background: #FDF064; //#BEE3F8;
+      }
+      &.status-picked-up {
+        background: #9DFF98; //#C6F6D5;
+      }
+      &.status-completed {
+        background: #e8f6ff;
+        color: #999;
+      }
+      &:hover {
+        //background: $hover;
+      }
+    }
+  }
+
+
+  .table-sortable {
+    display: block;
+    position: relative;
+    padding-right: 1rem;
+    cursor: pointer;
+    &:before, &:after {
+      display: inline-block;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 0.9rem;
+      opacity: 0.3;
+    }
+    &:before {
+      content: "\25B2";
+      padding-bottom: 1rem;
+    }
+    &:after {
+      content: "\25BC";
+      padding-top: 1rem;
+    }
+
+    &.sort-asc {
+      &:before {
+        opacity: 1;
+      }
+    }
+    &.sort-desc {
+      &:after {
+        opacity: 1;
+      }
+    }
+  }
+
+
+  .table-editable {
+    display: block;
+    border: 1px solid transparent;
+    &.empty {
+      height: 1.5rem;
+    }
+    &:hover {
+      border-color: $grey3;
+    }
+  }
+
+  select, input[type="text"], textarea {
+    padding: 0;
+  }
+
+  p {
+    margin: 0;
+  }
+  ul {
+    padding: 0;
+    margin: 0;
+    li {
+      list-style: initial;
+      list-style-position: inside;
+    }
+  }
+
+  .table-pdf-button {
+    border-radius: 0.25rem;
+    padding: 0.1rem;
+    background: #fff;
+    border: 1px solid $grey1;
+    svg {
+      width: 1.55rem;
+      height: 1.5rem;
+      color: #666;
+      body.wp-admin & {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+}
